@@ -18,7 +18,7 @@ Cilj projekta je analiza tog grafa i rešavanje tipičnih problema zavisnosti.
 
 ---
 
-## ⚙️ Implementirane funkcionalnosti
+##  Implementirane funkcionalnosti
 
 - Detekcija kružnih zavisnosti
 - Topološko sortiranje (redosled instalacije)

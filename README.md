@@ -6,7 +6,7 @@ Projekat modeluje skup paketa kao usmereni graf i omogućava analizu zavisnosti 
 
 ---
 
-## 📌 Ideja projekta
+##  Ideja projekta
 
 U savremenim softverskim sistemima, paketi zavise jedni od drugih (npr. Python, Node.js, Java ekosistemi).  
 Ove zavisnosti se prirodno modeluju kao usmereni graf:
@@ -28,7 +28,7 @@ Cilj projekta je analiza tog grafa i rešavanje tipičnih problema zavisnosti.
 
 ---
 
-## 🧠 Korišćeni algoritmi
+##  Korišćeni algoritmi
 
 ### Tarjan SCC
 Detekcija jako povezanih komponenti i kružnih zavisnosti.
@@ -41,7 +41,7 @@ Pronalaženje svih tranzitivnih zavisnosti paketa.
 
 ---
 
-## 📁 Struktura projekta
+##  Struktura projekta
 
 ```text
 .
@@ -56,7 +56,7 @@ Pronalaženje svih tranzitivnih zavisnosti paketa.
 ├── needed.txt
 └── README.md
 ```
-## ▶️ Pokretanje
+##  Pokretanje
 
 Projekat koristi Makefile za automatsko kompajliranje.
 

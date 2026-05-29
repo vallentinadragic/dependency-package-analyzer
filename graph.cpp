@@ -38,13 +38,9 @@ void Graf::popuni(const std::vector<Ivica>& ivice,
     }
 }
 
-// Geteri 
+// Geter
 int Graf::nadjiId(const std::string& naziv) const {
     auto it = idx_.find(naziv);
     if (it == idx_.end()) return -1;
     return it->second;
-}
-
-bool Graf::postojiPaket(const std::string& naziv) const {
-    return idx_.count(naziv) > 0;
 }

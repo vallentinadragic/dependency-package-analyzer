@@ -5,9 +5,9 @@
 
 // Pomocne funkcije
 
-void stampaListu(const Graf& graf, const std::vector<int>& ids) {
+void stampajListu(const Graf& graf, const std::vector<int>& ids) {
     if (ids.empty()) {
-        std::cout << "  (nema)\n";
+        std::cout << "  (not)\n";
         return;
     }
     for (int id : ids)
@@ -21,8 +21,8 @@ bool napraviPodskup(const Graf& graf,
     int id = graf.nadjiId(naziv);
 
     if (id == -1) {
-        std::cerr << "Greska: paket '" << naziv
-                  << "' nije u registru.\n";
+        std::cerr << "Error: package '" << naziv
+                  << "' not in registry.\n";
         return false;
     }
 
@@ -54,7 +54,7 @@ void komandaDeps(const Graf& graf, const std::string& naziv) {
     std::vector<int> zavisnosti = tranzitivneZavisnosti(graf, id);
     std::cout << "\nTransitive dependencies for package '" << naziv
               << "' (" << zavisnosti.size() << "):\n";
-    stampaListu(graf, zavisnosti);
+    stampajListu(graf, zavisnosti);
     std::cout << "\n";
 }
 
@@ -68,7 +68,7 @@ void komandaInfo(const Graf& graf, const std::string& naziv) {
     const std::vector<int>& direktne = graf.susedi(id);
     std::cout << "\nDirect dependencies for package '" << naziv
               << "' (" << direktne.size() << "):\n";
-    stampaListu(graf, direktne);
+    stampajListu(graf, direktne);
     std::cout << "\n";
 }
 
@@ -100,10 +100,12 @@ void komandaNeeded(const Graf& graf, const std::string& putanja) {
 void komandaLoad(Graf &graf, std::string& registarFajl){
     
     if (registarFajl == "") registarFajl = "packages.txt";
-    // Parsiranje registra — fatalna greska ako fajl ne postoji
+    // Parsiranje registra — greska ako fajl ne postoji
     std::vector<Ivica> ivice;
     std::vector<std::string> sviPaketi;
-    if (!parsirajRegistar(registarFajl, ivice, sviPaketi)) return;
+    if (!parsirajRegistar(registarFajl, ivice, sviPaketi)) {
+        std::cerr<<" Could not load packages from "<< registarFajl << std::endl;
+    };
 
     graf.popuni(ivice, sviPaketi);
 

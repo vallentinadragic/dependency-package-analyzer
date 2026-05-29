@@ -27,7 +27,6 @@ public:
         return neighbours_[id]; 
     }
     int nadjiId(const std::string& naziv) const;
-    bool postojiPaket(const std::string& naziv) const;
 
 private:
     std::vector<Paket> paketi_;

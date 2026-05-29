@@ -12,7 +12,6 @@ int main(int argc, char* argv[]) {
     std::cout << "         PACKAGE DEPENDENCY ANALYZER\n";
     std::cout << "=====================================================\n\n";
 
-    // Parsiranje registra — fatalna greska ako fajl ne postoji
     std::vector<Ivica> ivice;
     std::vector<std::string> sviPaketi;
     if (!parsirajRegistar(registarFajl, ivice, sviPaketi)) return 1;
